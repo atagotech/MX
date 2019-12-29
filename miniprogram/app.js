@@ -14,7 +14,16 @@ App({
         traceUser: true,
       })
     }
+    wx.getSystemInfo({
+      success: function(res) {
+        success:(res)=>{
+          this.globalData.height=res.statusBarHeight
+        }
+      },
+    })
 
-    this.globalData = {}
+    this.globalData = {
+      height:0,
+    }
   }
 })

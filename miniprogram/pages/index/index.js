@@ -7,7 +7,12 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    imgquestion:"../img",
+    navbarData:{
+      showCapsule:1,
+      title:'我的主页',
+    }
   },
 
   onLoad: function() {

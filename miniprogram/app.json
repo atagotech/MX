@@ -19,8 +19,10 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "个人旅行",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle":"custom"
   },
+
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

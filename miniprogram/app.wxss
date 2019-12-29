@@ -154,3 +154,9 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+/**app.wxss**/
+pages {
+  position: relative;
+  z-index: 9999998;
+  background: #fff;
+}

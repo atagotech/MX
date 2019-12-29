@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "n_navbar":"/components/n_navbar/n_navbar"
+  }
+  
 }

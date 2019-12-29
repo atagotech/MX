@@ -1,4 +1,13 @@
 <!--index.wxml-->
+<n_navbar navbar-data='{{navbarData}}'></n_navbar>
 <view class="container">
-<button class="tx1" bindtap="search">哪吒票房破50亿</button>
+  <view class="top">
+    <text class="tx1">登录后，订单完成可自动积累V金</text>
+    <view class="view1">
+      <text class="tx1">注册</text>
+      <text class="tx1">|</text>
+      <text class="tx1">登录</text>
+    </view>
+    <image class="img_wenhao" src="../../images/icon_wenhao.png"></image>
+  </view>
 </view>
