@@ -1,13 +1,93 @@
 <!--index.wxml-->
-<n_navbar navbar-data='{{navbarData}}'></n_navbar>
-<view class="container">
-  <view class="top">
-    <text class="tx1">登录后，订单完成可自动积累V金</text>
-    <view class="view1">
-      <text class="tx1">注册</text>
-      <text class="tx1">|</text>
-      <text class="tx1">登录</text>
+<view>
+  <navbar titleText="{{'XXX点餐系统'}}" bgColor="{{'#C92930'}}" textColor="white" back_show="{{isNeedBack}}"></navbar>
+  <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+    <view class='hidden'>
+
+      <!--top-->
+      <view class="top">
+        <text class="tx1">登录后，订单完成可自动积累V金</text>
+        <view class="view1">
+          <text class="tx1">注册</text>
+          <text class="tx1">|</text>
+          <text class="tx1">登录</text>
+        </view>
+        <image class="img_wenhao" src="../../images/icon_wenhao.png"></image>
+      </view>
     </view>
-    <image class="img_wenhao" src="../../images/icon_wenhao.png"></image>
-  </view>
+
+    <!--轮播-->
+    <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item class="swiper-item">
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!--local-->
+    <view class="hello">下午好</view>
+    <view class="local">
+      <image class="img_wenhao" src="../../images/icon_local.png"></image>
+      附近门店：木偶剧院 约649米
+    </view>
+    <!--start order-->
+    <view class="order" bindtap="goOrder">
+      <image class="img_wenhao" src="../../images/icon_eat_tool.png"></image>
+      <view>
+        <view class="order1">开始点餐</view>
+        <view class="order2">Order Now</view>
+      </view>
+    </view>
+
+    <!--card manage-->
+    <view class="card_manage">
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_vip.png"></image>
+        <view> 会员码</view>
+      </view>
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_card.png"></image>
+        <view> 我的卡包</view>
+      </view>
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_order.png"></image>
+        <view> 我的订单</view>
+      </view>
+    </view>
+
+    <!--news-->
+    <view class="news">
+      <image class="news_img" src="{{push_left}}"></image>
+      <image class="news_img" src="{{push_right}}"></image>
+    </view>
+
+    <view style="margin-top:30rpx;margin-left:30rpx;">更多服务</view>
+
+    <!--more service-->
+    <view class="top">
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_vip.png"></image>
+        <view> V金商城</view>
+      </view>
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_card.png"></image>
+        <view> K咖啡</view>
+      </view>
+      <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_order.png"></image>
+        <view> 口袋炸鸡店</view>
+      </view>
+        <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_order.png"></image>
+        <view> 会员</view>
+      </view>
+        <view style=" text-align:center;">
+        <image class="img_card" src="../../images/icon_order.png"></image>
+        <view> 宅急送</view>
+      </view>
+    </view>
+    <!--space-->
+    <view style="height:100rpx"></view>
+  </scroll-view>
 </view>

@@ -14,16 +14,17 @@ App({
         traceUser: true,
       })
     }
-    wx.getSystemInfo({
-      success: function(res) {
-        success:(res)=>{
-          this.globalData.height=res.statusBarHeight
-        }
-      },
-    })
-
     this.globalData = {
-      height:0,
+      navHeight:0,
     }
+
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        this.globalData.navHeight = res.statusBarHeight + 46;
+      }, fail(err) {
+        console.log(err);
+      }
+    })
   }
 })

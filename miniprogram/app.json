@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/chooseDiningRoom/choosediningroom",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -19,10 +20,9 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "个人旅行",
-    "navigationBarTextStyle": "black",
-    "navigationStyle":"custom"
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
   },
-
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

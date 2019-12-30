@@ -1,5 +1,6 @@
 //index.js
-const app = getApp()
+const app = getApp();
+const db = wx.cloud.database()
 
 Page({
   data: {
@@ -8,15 +9,26 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    imgquestion:"../img",
-    navbarData:{
-      showCapsule:1,
-      title:'我的主页',
-    }
+    imgquestion: "../img",
+    background: [],//轮播图
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 3000,
+    duration: 1200,
+    push_left: "",//推荐左图
+    push_right: "",//推荐右图
+    isNeedBack:false//是否带返回按钮
   },
-
   onLoad: function() {
+    console.log("onload")
+    this.setData({
+      navH: app.globalData.navHeight,
+      autoplay: !this.data.autoplay
+    })
+    this.imgQuery()
     if (!wx.cloud) {
+
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
@@ -73,20 +85,20 @@ Page({
   },
 
   // 上传图片
-  doUpload: function () {
+  doUpload: function() {
     // 选择图片
     wx.chooseImage({
       count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
+      success: function(res) {
 
         wx.showLoading({
           title: '上传中',
         })
 
         const filePath = res.tempFilePaths[0]
-        
+
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
@@ -98,7 +110,7 @@ Page({
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
-            
+
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
@@ -121,5 +133,54 @@ Page({
       }
     })
   },
+
+
+  /**
+   * 查询云图片
+   */
+  imgQuery: function() {
+    console.log("imgquery")
+    let that = this;
+    let imgArr = [];
+    let left_push = "";
+    let right_push = "";
+    db.collection('images').where({
+      _openid: this.data.openid
+    }).get({
+      success: res => {
+        console.log(res);
+        let dataList = res.data;
+        for (let i = 0; i < dataList.length; i++) {
+          if (dataList[i].type == "1") {
+            imgArr.push(dataList[i].url)
+          } else if (dataList[i].type == "2") {
+            left_push = dataList[i].url;
+          } else if (dataList[i].type == "3") {
+            right_push = dataList[i].url;
+          }
+        }
+
+        this.setData({
+          background: imgArr,
+          push_left: left_push,
+          push_right:right_push
+        })
+        console.log("[数据库][查询记录]成功：", res)
+      },
+      fail: err => {
+        wx.showToast({
+          title: '查询失败',
+          icon: 'none'
+        })
+        console.log("[数据库][查询记录]失败：", err)
+      }
+    })
+  },
+
+  goOrder:function(){
+    wx.navigateTo({
+      url: '../chooseDiningRoom/choosediningroom',
+    })
+  }
 
 })

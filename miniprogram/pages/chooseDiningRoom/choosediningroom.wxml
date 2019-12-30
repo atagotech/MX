@@ -1,0 +1,7 @@
+<view>
+  <navbar titleText="{{'选择餐厅'}}" bgColor="{{'#C92930'}}" textColor="white" back_show="{{isNeedBack}}"></navbar>
+  <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
+    <view class='hidden'>
+    </view>
+  </scroll-view>
+</view>

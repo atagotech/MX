@@ -1,0 +1,6 @@
+<view class='nav bg-white' style='height:{{navH}}px;background:{{bgColor}}'>
+    <view class='nav-title' style="color:{{textColor}}">
+      {{titleText}}
+      <image  class="{{back_show?'back':'hidden'}}" src='../../../images/icon_back.png'></image> 
+    </view>
+  </view>
