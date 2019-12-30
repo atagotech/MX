@@ -6,6 +6,7 @@ Page({
    */
   data: {
     isNeedBack:true,
+    titles:["12","2","3","44"]
   },
 
   /**

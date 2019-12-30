@@ -1,7 +1,42 @@
+<import src="../../extend/choosediningroom/1.wxml"/>
 <view>
   <navbar titleText="{{'选择餐厅'}}" bgColor="{{'#C92930'}}" textColor="white" back_show="{{isNeedBack}}"></navbar>
-  <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y>
-    <view class='hidden'>
+  <scroll-view class='container' style='height:calc(100vh - {{navH}}px)' scroll-y>
+    <view class="top_container">
+      <view class="search">
+        <view>北京</view>
+        <image class="img_wenhao" src="../../images/icon_local.png"></image>
+        <view class="search_by_str">请输入关键字搜索</view>
+        <image class="img_wenhao" src="../../images/icon_local.png"></image>
+      </view>
+      <view class="sp_line"></view>
+      <view class="login_container">
+        <view style="text-align:center;font-size:26rpx;color:gray">您还未登录，登录后点餐享折扣</view>
+        <view style="font-size:30rpx;color:#c92930">立即登录</view>
+      </view>
+      <tablayout titles="{{titles}}">
+        <view slot="0">
+          <template is="1">
+            <view>你好啊1</view>
+          </template>
+        </view>
+        <view slot="1">
+          <template is="1">
+            <view>你好啊2</view>
+          </template>
+        </view>
+        <view slot="2">
+          <template is="1">
+            <view>你好啊3</view>
+          </template>
+        </view>
+        <view slot="3">
+          <template is="1">
+            <view>你好啊4</view>
+          </template>
+        </view>
+      </tablayout>
+
     </view>
   </scroll-view>
 </view>
