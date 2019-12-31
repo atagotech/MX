@@ -51,6 +51,32 @@
   justify-content:space-between
 }
 
+.tab{
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: row;
+}
+.tab_contanier{
+  margin-left: 5%;
+  align-items: center;
+  background: #ff0000;
+  display: flex;
+  flex-direction: column
+}
+
+.tab_in{
+  position: relative;
+  height: 5rpx;
+  border-bottom:5rpx solid red
+}
+
+
+
+
+
+
+
 
 
 
@@ -70,113 +96,4 @@
   display: flex;
   width: 30rpx;
   height: 30rpx;
-}
-
-/**index.wxss**/
-
-.home-page {
-  height: 160rpx;
-  width: 100%;
-  border: 1rpx solid red;
-  font-size: 60rpx;
-}
-
-.swiper-item {
-  width: 100%;
-  display: block;
-  height: 150px;
-}
-
-.swiper_box {
-  margin-top: 10rpx;
-  height: 300rpx;
-  width: 100%;
-}
-
-swiper-item image {
-  height: 100%;
-  width: 95%;
-  margin-left: 2.5%;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.hello {
-  font-size: 40rpx;
-  margin-left: 3%;
-  margin-top: 10rpx;
-}
-
-.local {
-  margin-top: 10rpx;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-size: 20rpx;
-  color: gray;
-}
-
-.order {
-  margin-left: 2.5%;
-  width: 95%;
-  margin-top: 10rpx;
-  height: 80rpx;
-  background: #c92930;
-  border: 0px solid;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 3px 5px #888;
-}
-
-.order1 {
-  text-align: center;
-  font-size: 35rpx;
-  color: white;
-}
-
-.order2 {
-  text-align: center;
-  color: white;
-  font-size: 22rpx;
-}
-
-.card_manage {
-  margin-top: 50rpx;
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.img_card {
-  align-content: center;
-  display: inline-block;
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.news {
-  margin-top: 20rpx;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.news_img {
-  align-content: center;
-  display: inline-block;
-  width: 49%;
-  height: 300rpx;
 }

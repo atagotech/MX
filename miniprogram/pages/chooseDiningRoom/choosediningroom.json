@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "navbar": "../../components/navbar/normal/normalnavbar",
-    "tablayout":"../../components/tablayout/tablayout"
+    "navbar": "../../components/navbar/normal/normalnavbar"
   }
+
 }
